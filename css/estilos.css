@@ -1,0 +1,853 @@
+/* inmportamos fuentes de google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+/* variables con paleta de colores */
+:root {
+    --bg-black-900: #f2f2fc;
+    --bg-black-100: #fdf9ff;
+    --bg-black-50: #e8dfec;
+    --text-black-900: #302e4d;
+    --text-black-700: #504e70;
+}
+body.dark{
+    --bg-black-900: #151515;
+    --bg-black-100: #222222;
+    --bg-black-50: #393939;
+    --text-black-900: #fff;
+    --text-black-700: #e9e9e9;
+}
+body {
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+}
+
+::before,
+::after {
+    /* El valor border-box en el box-sizing hace que el padding y el border pasen a formar parte del cálculo del ancho 
+    de la caja y no lo suman posteriormente. */
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+.aside {
+    width: 210px;
+    /* le asignamos un colo por medio de las variables declaradas al inicio */
+    background: var(--bg-black-100);
+    /* arreglamos la posicion para que permanezca en pantalla sin afectar a los demas elementos */
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-right: 1px solid var(--bg-black-50);
+    /* indica el orden de un elemento posicionado y sus descendientes. Cuando varios elementos se superponen, 
+    los elementos con mayor valor z-index cubren aquellos con menor valor. */
+    z-index: 10;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section {
+    background: var(--bg-black-900);
+    min-height: 100vh;
+    display: block;
+    opacity: 1;
+    padding: 0 30px;
+}
+
+.main-content {
+    padding-left: 270px;
+}
+
+.aside .logo {
+    position: absolute;
+    top: 50px;
+    font-size: 30px;
+    /* el text transform me indicara el estilos del texto, en este caso agrega mayus 
+    en la primera letra de cada palabra */
+    /* text-transform: capitalize; */
+}
+
+.aside .logo a {
+    color: var(--text-black-900);
+    /* background: red; */
+    padding: 15px 20px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    position: relative;
+}
+
+.aside .logo a span {
+    font-family: 'Clicker Script', cursive;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.aside .logo ::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid var(--skin-color);
+    border-left: 5px solid var(--skin-color);
+    bottom: 0;
+    left: 0;
+}
+
+.aside .logo ::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top: 5px solid var(--skin-color);
+    border-right: 5px solid var(--skin-color);
+    top: 0;
+    right: 0;
+}
+
+.aside .nav-toggler {
+    height: 40px;
+    width: 45px;
+    border: 1px solid var(--bg-black-50);
+    cursor: pointer;
+    position: fixed;
+    left: 300px;
+    top: 20px;
+    border-radius: 5px;
+    background: var(--bg-black-50);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.aside .nav-toggler span {
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    display: inline-block;
+    position: relative;
+}
+
+.aside .nav-toggler span::before {
+    content: '';
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    top: -6px;
+    position: absolute;
+    left: 0;
+}
+
+.aside .nav-toggler span::after {
+    content: '';
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    top: 6px;
+    position: absolute;
+    left: 0;
+}
+
+.aside .nav {
+    margin-top: 50px;
+}
+
+.aside .nav li {
+    margin-bottom: 20px;
+    /* background: red; */
+    display: block;
+}
+
+.aside .nav li a {
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    padding: 5px 15px;
+}
+
+.aside .nav li a.active {
+    color: var(--skin-color);
+}
+
+.aside .nav li a i {
+    margin-right: 15px;
+}
+
+/* empieza la seccion del home */
+
+.home .home-img img {
+    height: 400px;
+    border-radius: 6px;
+    box-shadow: 6px 12px 10px black;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    /* background-color: bisque; */
+    margin: auto;
+}
+
+.padd-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+}
+
+.btn {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 35px;
+    color: white;
+    border-radius: 20px;
+    display: inline-block;
+    /* determina cómo se maneja el espacio en blanco dentro de un elemento */
+    white-space: nowrap;
+    border: none;
+    background-color: var(--skin-color);
+    /* agregamos la propiedad de transicion */
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    /* aqui hacemos un transform el cual va a crecer un 1.05 % el btn */
+    transform: scale(1.05);
+}
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    color: var(--text-black-900);
+}
+
+.home .home-info {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+.home .home-img {
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+    position: relative;
+    /* border: 2px solid red; */
+}
+
+h3.hello {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+h3.hello span {
+    font-family: 'Clicker Script', cursive;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--skin-color);
+}
+
+h3.my-profession {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.typing {
+    color: var(--skin-color);
+}
+
+.home-info p {
+    margin-bottom: 70px;
+    font-size: 20px;
+    color: var(--text-black-700);
+}
+
+.home-img::after {
+    content: '';
+    position: absolute;
+    height: 4vw;
+    width: 4vw;
+    right: 9px;
+    bottom: -40px;
+    border-bottom: 10px solid var(--skin-color);
+    border-right: 7px solid var(--skin-color);
+}
+
+.home-img::before {
+    content: '';
+    position: absolute;
+    height: 4vw;
+    width: 4vw;
+    left: -4px;
+    top: -40px;
+    border-top: 10px solid var(--skin-color);
+    border-left: 8px solid var(--skin-color);
+}
+
+.home .home-img img {
+    margin: auto;
+    border-radius: 5px;
+    height: 400px;
+}
+
+/* ocultamos lo antes realizado para dar paso a about */
+.hidden {
+    display: none !important;
+}
+
+.section .container {
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+
+.section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+    /* background-color: red; */
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    color: var(--text-black-900);
+    font-weight: 700;
+}
+
+.section-title h2::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 50px;
+    background-color: var(--skin-color);
+    top: 100%;
+    left: 0;
+    margin-top: -60px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 25px;
+    background-color: var(--skin-color);
+    top: 100%;
+    left: 0;
+    margin-top: -54px;
+}
+
+/* INICIA ESTILOS ABOUT */
+.about .about-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    /* background-color: red; */
+}
+
+.about .about-content .about-text {
+    flex: 0 0 90%;
+    max-width: 90%;
+    /* border: 2px solid red; */
+}
+
+.about .about-content .about-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-black-900);
+}
+
+
+.about .about-content .about-text h3 span {
+    color: var(--skin-color);
+    font-family: 'Clicker Script', cursive;
+    font-size: 36px;
+}
+
+.about .about-content .about-text p {
+    font-size: 16px;
+    /* border: 2px solid black; */
+    width: 94%;
+    text-align: justify;
+    line-height: 25px;
+    color: var(--text-black-700);
+}
+
+.about .about-content .personal-info {
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin-top: 20px;
+    /* border: 8px solid red; */
+}
+
+.about .about-content .skills {
+    flex: 0 0 30%;
+    max-width: 35%;
+    margin-top: 20px;
+    height: 500px;
+    /* border: 2px solid red; */
+    margin-left: 40px;
+    /* padding: 15px; */
+}
+
+.about .about-content .personal-info .info-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.about .about-content .personal-info .info-item p {
+    font-weight: 600;
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--text-black-900);
+    border-bottom: 1px solid var(--bg-black-50);
+    padding-left: 20px;
+}
+
+.about .about-content .personal-info .info-item p span {
+    font-weight: 400;
+    color: var(--text-black-700);
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.about .about-content .personal-info .buttons {
+    margin-top: 30px;
+}
+
+.about .about-content .personal-info .buttons .btn {
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.about .about-content .skills .skill-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    background-color: red;
+    display: block;
+}
+
+progress {
+    color: var(--skin-color);
+}
+
+.skills h3 {
+    color: var(--skin-color);
+    font-size: 16px;
+    font-size: 16px;
+}
+
+.skills span {
+    font-size: 12px;
+}
+
+.skills progress {
+    /* background-color: crimson; */
+    /* Elimino la apariencia por defecto */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Quito el borde que aparece en Firefox */
+    border: none;
+    /* Añado mis propios estilos */
+    width: 10vw;
+    height: 10px;
+    overflow: hidden;
+    /*  Estos estilos solo se aplicaran al fondo de la barra en mozilla */
+    border: 1px inset #666;
+    border-radius: 20px;
+    border: 2px solid var(--skin-color);
+}
+
+/* para darle un color a las barras progress */
+progress::-webkit-progress-value {
+    background: var(--skin-color);
+    border-radius: 20px;
+}
+
+/* para colorear el fondo de la barra  */
+progress::-webkit-progress-bar {
+    background-color: #D8D8D8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    /*esta sombra es para simular el borde que he aplicado arriba para Mozilla*/
+    border-radius: 20px;
+}
+/* Seccion de mi educacion */
+.educacion {
+    /* border: 2px solid gray; */
+    width: 80%;
+    display: block;
+    margin: 0px auto;
+    box-shadow: 8px 8px 16px rgb(95, 94, 94);
+    border-radius: 8px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: -10px;
+    margin-bottom: 60px;
+}
+
+.educacion h3 {
+    font-family: 'Clicker Script', cursive;
+    font-weight: bold;
+    font-size: 32px;
+    color: var(--skin-color);
+}
+
+.educacion p {
+    margin-top: 6px;
+    color: var(--text-black-700);
+}
+
+.educacion h4 {
+    margin-top: 6px;
+    color: var(--text-black-900);
+}
+
+.date {
+    font-style: italic;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* SERVICES */
+.service .container {
+    padding-bottom: 40px;
+}
+
+.service .service-item {
+    margin-bottom: 30px;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
+
+.service .service-item .service-item-inner {
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 8px;
+    padding: 20px;
+    margin-right: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner:hover {
+    box-shadow: 0px 0px 18px rgb(165, 165, 165);
+}
+
+.service .service-item .service-item-inner .icon {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner .icon .fa {
+    font-size: 30px;
+    line-height: 60px;
+    color: var(--skin-color);
+    transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner:hover .icon {
+    background-color: var(--skin-color);
+}
+
+.service .service-item .service-item-inner:hover .icon .fa {
+    /* de esta manera junto con el transition hacemos un efecto de achicar el icono */
+    color: azure;
+    font-size: 22px;
+}
+
+.service .service-item .service-item-inner h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+}
+
+.service .service-item .service-item-inner p {
+    font-size: 16px;
+    color: var(--text-black-700);
+    line-height: 25px;
+}
+
+/* PORTAFOLIO SECCION */
+
+.portfolioContent{
+    background: var(--bg-black-900);
+}
+
+.portfolio{
+    width: 80%;
+    /* border: 2px solid red; */
+    margin: 0 auto;
+}
+
+.portfolio .portfolio-heading {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+    padding: 15px;
+}
+
+.portfolio .portfolio-heading h2 {
+    color: var(--text-black-900);
+    font-weight: 200;
+    padding: 15px;
+}
+
+.portfolio .portfolio-item {
+    flex: 0 0 20em;
+    max-width: 22em;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-left: 16px;
+    margin-right: 12px;
+    padding: 10px;
+    /* margin: auto; */
+    box-shadow: 8px 10px 20px rgb(69, 67, 67);
+    transition: all 0.3s ease;
+    height: 210px;
+    border-radius: 6px;
+    /* border: 2px solid black; */
+}
+
+.portfolio .portfolio-item:hover {
+    box-shadow: 8px 10px 14px rgb(70, 69, 69);
+}
+
+.portfolio .portfolio-item-inner {
+    border: 6px solid var(--bg-black-100);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.portfolio .portfolio-item-inner .portfolio-img img {
+    width: 100%;
+    border-radius: 6px;
+    /* display: block; */
+    transition: all 0.3s ease;
+    height: 200px;
+}
+
+.portfolio .portfolio-item-inner .portfolio-img img:hover {
+    width: 98%;
+    margin: 0px 6px;
+    border-radius: 12px;
+}
+
+/* INICIO DE ESTILOS CONTACTO */
+.contact-title {
+    color: var(--skin-color);
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.contact-sub-title {
+    color: var(--text-black-900);
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 60px;
+}
+
+
+.contact .contact-info-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    text-align: center;
+}
+
+.contact .contact-info-item .icon {
+    display: inline-block;
+}
+
+.contact .contact-info-item .icon .fa {
+    font-size: 25px;
+    color: var(--skin-color);
+}
+
+.contact .contact-info-item h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+    margin: 15px 0 5px;
+}
+
+.contact .contact-info-item p {
+    font-size: 16px;
+    line-height: 25px;
+    color: var(--text-black-700);
+    font-weight: 400;
+}
+
+.contact .contact-info-item a {
+    text-decoration: none;
+    color: var(--text-black-700);
+}
+
+/* formulario */
+.contact .contact-form {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.contact .contact-form .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.contact .contact-form .col-12 {
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+
+.contact .contact-form .form-item {
+    margin-bottom: 30px;
+    margin-right: 20px;
+    margin-left: 40px;
+}
+
+.contact .contact-form .form-item .form-control {
+    width: 100%;
+    height: 10%;
+    border-radius: 20px;
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    padding: 10px 25px;
+    color: var(--text-black-700);
+    transition: all 0.3s ease;
+}
+
+.contact .contact-form .form-item .form-control:focus {
+    box-shadow: 0 0 20px rgb(91, 91, 91);
+}
+
+.contact .contact-form .form-item textarea.form-control {
+    height: 140px;
+}
+
+.contact .contact-form .btn {
+    height: 50px;
+    border-radius: 16px;
+}
+
+@media (max-width: 1199px) {
+    .aside {
+        left: -270px;
+    }
+
+    .main-content {
+        padding-left: 6px;
+    }
+
+    .about .about-content .personal-info .info-item p span {
+        display: block;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .home .home-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .home .home-img {
+        display: none;
+    }
+
+    .home.home-img img {
+        width: 100%;
+    }
+
+    .contact .contact-info-item,
+    .portfolio .portfolio-item,
+    .service .service-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .portfolio .portfolio-item {
+        flex: 0 0 70%;
+        max-width: 70%;
+        margin: 12px auto;
+    }
+
+    .emailInfo{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .educacion{
+        width: 100%;
+        margin-left: -22px;
+        box-shadow: none;
+    }
+
+    .contact .contact-info-item{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin: 20px auto;
+    }
+    .service .service-item,
+    .about .about-content .p {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .about .about-content .skills {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-left: 24%;
+    }
+
+    .skills progress {
+        width: 160px;
+        overflow: hidden;
+        /*  Estos estilos solo se aplicaran al fondo de la barra en mozilla */
+        border-radius: 20px;
+        margin-top: 10px;
+        border: 2px solid var(--skin-color);
+    }
+
+    .about .about-content .personal-info .buttons .btn {
+        margin-left: 72%;
+        width: 20%;
+        height: 8px;
+    }
+
+    .about .about-content .personal-info .buttons .btn {
+        font-size: 10px;
+        text-align: left;
+    }
+
+    .about .about-content .personal-info {
+        margin-left: 50px;
+    }
+
+}
