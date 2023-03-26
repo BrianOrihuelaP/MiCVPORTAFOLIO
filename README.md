@@ -10,13 +10,13 @@ link al portafolio en linea: https://ambitious-cliff-09b4f3810.2.azurestaticapps
 
 -  Este sitio contiene caracteristicas como lo son, el cambio de paleta de colores, la implementación de un modo noche y una barra lateral de navegación a los distintos apartados del sitio. 
 
-![capturas](/Capturas CV/captura0.png)
-![capturas](/Capturas CV/captura1.png)
-![capturas](/Capturas CV/captura2.png)
-![capturas](/Capturas CV/captura3.png)
-![capturas](/Capturas CV/captura4.png)
-![capturas](/Capturas CV/captura5.png)
-![capturas](/Capturas CV/captura6.png)
+![capturas](/Capturascv/captura0.png)
+![capturas](/Capturascv/captura1.png)
+![capturas](/Capturascv/captura2.png)
+![capturas](/Capturascv/captura3.png)
+![capturas](/Capturascv/captura4.png)
+![capturas](/Capturascv/captura5.png)
+![capturas](/Capturascv/captura6.png)
 
 
 > Si has llegado hasta esta parte, gracias por mirar mi repo, espero y te sea de gran ayuda!
